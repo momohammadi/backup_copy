@@ -1,0 +1,53 @@
+#log level value report or none
+LOG_LEVEL=debug
+
+#if 5 minute load average is greater than MAX_LOAD wait and start when it back to lower
+MAX_LOAD=5
+
+#dry run used for see result without doing copy files, this can be use with command line --dry-run or set in config file. supported option: true, false
+#DRY_RUN=
+
+#true or false, true for show output on the terminal or set false to completely silent, true is better for use on a cronjob
+QUIET=true
+
+#notification channel supported value on this version is the mail
+#mail : send email via smtp
+NOTIFICATION_CHANNEL=mail
+
+#supported value failed, success, both, none
+#failed : send notification on failed copy
+#success : send notification on success copy
+#both : send notification on failed or success status
+#none : completely disabled notification
+NOTIFICATION_TYPE=failed
+
+#choose what way you want copy backups, on this version supported type is just ftp
+COPY_TYPE=ftp
+
+#enter source directory or file address without end of slash
+SOURCE_BACKUP_DIR=
+
+#EXCLUDE and INCLUDE pattern follows grep pattern policy you can use '|' for or condition and also use '.*' for and condition
+#also you can use both include and exclude for better management
+#example for or condition: accounts|weekly|(.*)char'
+#extended regular expression for exclude file(s) and dir(s) from copy
+EXCLUDE=
+
+#extended regular expression for include file(s) and dir(s) for copy
+INCLUDE=
+
+#this is a optional field for named the job, actually this is useful if you have multiple copy job on one server
+JOB_NAME=
+
+FTP_USER=
+FTP_PASSWORD=
+FTP_IP=
+SMTP_SERVER=
+FROM_NAME=
+SMTP_PORT=
+EMAIL_SENDER=
+SMTP_PASSWORD=
+#Receiver Email address support multiple receiver(separate each email address with space)
+EMAIL_TO=
+
+#end of file
